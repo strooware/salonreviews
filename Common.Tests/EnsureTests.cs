@@ -6,6 +6,32 @@ namespace Strooware.SalonReviews.Common.Tests;
 public class EnsureTests
 {
    [Fact]
+   public void NotNull_WithNullValue_ShouldThrow()
+   {
+      // Arrange
+      object? objValue = null;
+
+      // Act
+      var act = () => Ensure.NotNull(objValue);
+
+      // Assert
+      act.Should().Throw<ArgumentNullException>();
+   }
+
+   [Fact]
+   public void NotNull_WithValue_ShouldNotThrow()
+   {
+      // Arrange
+      var objValue = new { };
+
+      // Act
+      var act = () => Ensure.NotNull(objValue);
+
+      // Assert
+      act.Should().NotThrow<ArgumentNullException>();
+   }
+
+   [Fact]
    public void NotNullOrEmpty_WithEmptyString_ShouldThrow()
    {
       // Arrange

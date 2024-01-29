@@ -4,6 +4,14 @@ namespace Strooware.SalonReviews.Common;
 
 public static class Ensure
 {
+   public static void NotNull([NotNull] object value)
+   {
+      if (value is null)
+      {
+         throw new ArgumentNullException(nameof(value));
+      }
+   }
+
    public static void NotNullOrEmpty([NotNull] string value)
    {
       if (string.IsNullOrEmpty(value))
