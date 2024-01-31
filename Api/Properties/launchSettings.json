@@ -2,7 +2,10 @@
   "profiles": {
     "SalonReviews.Api": {
       "commandName": "Project",
-      "applicationUrl": "http://localhost:5000"
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
     }
   }
 }
